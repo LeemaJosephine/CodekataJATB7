@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class DuplicatePassport {
 
-	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -26,21 +25,30 @@ public class DuplicatePassport {
 			passports[i]=sc.next();
 		}
 		
+		Arrays.sort(passports);
 		
-		HashSet<String> unique = new HashSet<String>();
+        System.out.print(passports[0]);
+        for (int i = 1; i < n; i++) {
+            if (!passports[i].equals(passports[i - 1])) { // !=
+            	
+            	System.out.print(" "+passports[i]);
+            }
+            
+        }
+        
+          
 		
-		// converting array to set
-		
-		for(int i=0;i< n;i++) {
-			
-			unique.add(passports[i]);
-		}
-		
-		// For-each to iterate the set and print in console
-		for(String pass : unique) {
-			
-			System.out.print(pass+" ");
-		}
+//		HashSet<String> unique = new HashSet<String>();
+//		
+//		for(int i=0;i< n;i++) {
+//			
+//			unique.add(passports[i]);
+//		}
+//		
+//		for(String pass : unique) {
+//			
+//			System.out.print(pass+" ");
+//		}
 		
 	}
 
